@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="HTML 5, CSS 3, JavaScript">
+  <meta name="description" content="Dynamic Web Developer">
+  <meta name="author" content="Sylvain">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/calc.css"/>
+  <title>Scientific Calculator</title>
+<style>
+</style>
+</head>
+<body>
+  <form name="scientific-calc">
+    <table class="calculator" cellspacing="0" cellpadding="1">
+      <tr>
+      <td colspan="5"><input id="display" name="display" value="0" size="28" maxlength="25"></td>
+      </tr>
+      <tr>
+      <td><input type="button" class="btnMath" name="btnMath" value="(" onclick="addChar(this.form.display, '(')"></td>
+      <td><input type="button" class="btnMath" name="btnMath" value=")" onclick="addChar(this.form.display,')')"></td>
+      <td><input type="button" class="btnMath" name="btnMath" value="&#960;" onclick="addChar(this.form.display,'3.14159265359')"></td>
+      <td><input type="button" class="btnsp" name="btnsp"  value="x&#50;" onclick="if(checkNum(this.form.display.value)) { square(this.form) }"></td>
+      <td><input type="button" class="btnMath" name="btnMath" value="%" onclick=" percent(this.form.display)"></td>
+      </tr>
+      <tr>
+      <td><input type="button" class="btn" name="btn" value="7" onclick="addChar(this.form.display, '7')"></td>
+      <td><input type="button" class="btn" name="btn" value="8" onclick="addChar(this.form.display, '8')"></td>
+      <td><input type="button" class="btn" name="btn" value="9" onclick="addChar(this.form.display, '9')"></td>
+      <td><input type="button" class="btnsp" name="btnsp" value="x&#94;" onclick="if(checkNum(this.form.display.value)) { exp(this.form) }"></td>
+      <td><input type="button" class="btnMath" name="btnMath" value="/" onclick="addChar(this.form.display, '/')"></td>
+      <tr>
+      <td><input type="button" class="btn" name="btn" value="4" onclick="addChar(this.form.display, '4')"></td>
+      <td><input type="button" class="btn" name="btn" value="5" onclick="addChar(this.form.display, '5')"></td>
+      <td><input type="button" class="btn" name="btn" value="6" onclick="addChar(this.form.display, '6')"></td>
+      <td><input type="button" class="btnsp" name="btnsp"  value="*" onclick="addChar(this.form.display, '*')"></td>
+      <td><input type="button" class="btnsp" name="btnsp"  value="&radic;" onclick="if(checkNum(this.form.display.value)) { sqrt(this.form) }"></td>
+      </tr>
+      <tr>
+      <td><input type="button" class="btn" name="btn" value="1" onclick="addChar(this.form.display, '1')"></td>
+      <td><input type="button" class="btn" name="btn" value="2" onclick="addChar(this.form.display, '2')"></td>
+      <td><input type="button" class="btn" name="btn" value="3" onclick="addChar(this.form.display, '3')"></td>
+      <td><input type="button" class="btnsp" name="btnsp"  value="-" onclick="addChar(this.form.display, '-')"></td>
+      <td><input type="button" class="btnsp" name="btnsp"  value="+" onclick="addChar(this.form.display, '+')"></td>
+      </tr>
+      <tr>
+      <td><input type="button" class="btnMath" name="btnMath" value="&plusmn" onclick = "changeSign(this.form.display)"></td>
+      <td><input type="button" class="btn" name="btn" value="0" onclick="addChar(this.form.display, '0')"></td>
+      <td><input type="button" class="btnMath" name="btnMath" value="&#8729;" onclick="addChar(this.form.display, '&#8729;')"></td>
+      <td><input type="button" class="btnbtm" name="btnbtm" value="C" onclick="this.form.display.value=  0 "></td>
+      <td><input type="button" class="btnbtm" name="btnbtm" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }"></td>
+      </tr>
+    </table>
+    </form>
+    <script src="../scripts/calc.js"></script>
+  </body>
+  </html>
